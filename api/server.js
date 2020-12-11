@@ -1,14 +1,17 @@
 // build your server here
-const express = require('express')
-const helmet = require('helmet')
-const morgan = require('morgan')
-const cors = require('cors')
+const express = require('express');
+const ProjectRouter = require('./project/router');
+const ResourceRouter = require('./resource/router');
+const TaskRouter = require('./task/router');
+const server = express();
 
-const projectRouter = require('./project/router')
+server.use(express.json());
+server.use('/projects', ProjectRouter);
+server.use('/resources', ResourceRouter);
+server.use('/tasks', TaskRouter);
 
-const server = express()
-server.use(helmet())
-server.use(morgan('dev'))
-server.use(cors())
-server.use(express.json())
-server.use(projectRouter)
+server.get('/', (req, res) => {
+  res.status(200).json({ message: 'server is running' });
+});
+
+module.exports = server

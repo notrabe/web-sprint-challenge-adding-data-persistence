@@ -45,9 +45,13 @@ Commit your code regularly and meaningfully.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
 2. Why do tables need a Primary Key?
+Primary keys ensure accessibility for that specific row of data.
 3. What is the name given to a table column that references the Primary Key on another table?
+Foreign key
 4. What do we need in order to have a _many to many_ relationship between two tables?
+Multiple fields of data can be shared between multiple tables, for example, an author can have multiple books, and a book can have multiple authors. 
 
 ## Instructions
 
